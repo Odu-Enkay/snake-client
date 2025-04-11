@@ -6,8 +6,9 @@ const connect = function () {
     host: "localhost",// IP address here,
     port: 50541// PORT number here,
 });
-
-console.log('Connected to server');
+  conn.on('data', (data) => {
+    console.log('Server says: ', data);
+});
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
